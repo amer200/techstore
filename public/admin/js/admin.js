@@ -1,11 +1,14 @@
-var quill = new Quill("#editor", {
-  theme: "snow",
-});
-
-const subBtn = document.getElementById("subBtn");
-const hideInput = document.getElementById("hide");
-const form = document.getElementById("main-form");
-subBtn.addEventListener("click", () => {
-  hideInput.value = quill.root.innerHTML;
-  form.submit();
-});
+/******categs */
+const removeCateg = (cId) => {
+  if (confirm('سيتم حذف هذا القسم نهائيا هل انت متأكد؟')) {
+    fetch(`/admin/remove-categ/${cId}`)
+      .then(res => {
+        return res.json()
+      })
+      .then(res => {
+        location.reload();
+      }).catch(err => {
+        console.log(err)
+      })
+  }
+}

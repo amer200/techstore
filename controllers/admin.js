@@ -1,6 +1,6 @@
 const Categ = require('../models/categ');
 const Prod = require('../models/prod');
-
+const fs = require('fs');
 exports.getMainPage = async (req, res) => {
     try {
         const categs = await Categ.find();
@@ -71,6 +71,38 @@ exports.addCateg = (req, res) => {
         .then(c => {
             console.log(c)
             res.redirect('/admin/categs');
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+exports.editCateg = (req, res) => {
+    const cId = req.params.cId;
+    const name = req.body.name;
+    Categ.findById(cId)
+        .then(c => {
+            c.name = name;
+            if (req.file) {
+                fs.unlink(`public${c.img}`, () => { })
+                c.img = req.file.path.split('public')[1];
+            }
+            return c.save();
+        })
+        .then(c => {
+            res.redirect('/admin/categs');
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+exports.removeCateg = (req, res) => {
+    const cId = req.params.cId;
+    Categ.findByIdAndRemove(cId)
+        .then(c => {
+            fs.unlink(`public${c.img}`, () => { })
+            res.send({
+                msg: 'ok'
+            })
         })
         .catch(err => {
             console.log(err)

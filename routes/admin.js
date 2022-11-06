@@ -10,5 +10,6 @@ route.post('/add-prod', adminControllers.addProd);
 route.get('/categs', adminControllers.getCategsPage);
 route.post('/add-categ', adminControllers.addCateg);
 route.get('/prods/:categId', adminControllers.getCategProds)
-
+route.post('/edit-categ/:cId', adminControllers.editCateg)
+route.get('/remove-categ/:cId', adminControllers.removeCateg)
 module.exports = route;

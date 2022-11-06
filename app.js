@@ -41,7 +41,7 @@ const upload = multer({
 })
 app.post('/admin/add-categ', upload.single('img'));
 app.post('/admin/add-prod', upload.array('img'));
-
+app.post('/admin/edit-categ/:cId', upload.single('img'));
 /********************************************************************* */
 //routes
 // const mainRoutes = require('./routes/main');
