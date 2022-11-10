@@ -1,10 +1,11 @@
 const Categ = require('../models/categ');
 const Prod = require('../models/prod');
 const fs = require('fs');
+const { ok } = require('assert');
 exports.getMainPage = async (req, res) => {
     try {
         const categs = await Categ.find();
-        const prods = await Prod.find();
+        const prods = await Prod.find().populate('categ');
         console.log(prods)
         res.render('admin/prods', {
             c: categs,
@@ -22,6 +23,7 @@ exports.addProd = async (req, res) => {
     const price = req.body.price;
     const qwant = req.body.qwant;
     const categId = req.body.categ;
+    const desc = req.body.desc;
     const imgs = req.files;
     const categ = await Categ.findById(categId);
     const paths = [];
@@ -34,6 +36,7 @@ exports.addProd = async (req, res) => {
         price: price,
         quant: qwant,
         categ: categId,
+        desc: desc,
         imgs: paths
     })
     prod.save()
@@ -42,6 +45,34 @@ exports.addProd = async (req, res) => {
             return categ.save();
         })
         .then(c => {
+            res.redirect('/admin')
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+exports.editProd = (req, res) => {
+    const id = req.params.pId;
+    const name = req.body.name;
+    const price = req.body.price;
+    const qwant = req.body.qwant;
+    const categId = req.body.categ;
+    const desc = req.body.desc;
+    Prod.findById(id)
+        .then(p => {
+            p.name = name;
+            p.price = price;
+            p.quant = qwant;
+            p.Categ = categId;
+            p.desc = desc;
+            if (req.files) {
+                req.files.forEach(i => {
+                    p.imgs.push(i.path.split('public')[1]);
+                })
+            }
+            return p.save();
+        })
+        .then(p => {
             res.redirect('/admin')
         })
         .catch(err => {
@@ -116,6 +147,42 @@ exports.getCategProds = (req, res) => {
             res.render('admin/categ-prod', {
                 p: c.prods
             });
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+exports.removeProdImg = (req, res) => {
+    const pId = req.params.pId;
+    const img = req.query.img;
+    Prod.findById(pId)
+        .then(p => {
+            fs.unlink(`public${img}`, (err) => {
+                if (err) {
+                    console.log(err)
+                }
+            })
+            p.imgs = p.imgs.filter(i => {
+                return i !== img
+            })
+            return p.save();
+        })
+        .then(p => {
+            res.status(200).send({
+                msg: 'ok'
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+exports.removeProd = (req, res) => {
+    const id = req.params.id;
+    Prod.findByIdAndRemove(id)
+        .then(p => {
+            res.status(200).send({
+                msg: "ok"
+            })
         })
         .catch(err => {
             console.log(err)
