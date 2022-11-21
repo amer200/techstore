@@ -1,7 +1,8 @@
 const Categ = require('../models/categ');
 const Prod = require('../models/prod');
+const Order = require('../models/order');
+const User = require('../models/user');
 const fs = require('fs');
-const { ok } = require('assert');
 exports.getMainPage = async (req, res) => {
     try {
         const categs = await Categ.find();
@@ -187,4 +188,17 @@ exports.removeProd = (req, res) => {
         .catch(err => {
             console.log(err)
         })
+}
+/**orders */
+exports.getOrders = async (req, res) => {
+    try {
+        const orders = await Order.find().populate(['prods', 'user']);
+        console.log(orders);
+        res.render('admin/orders', {
+            orders: orders
+        })
+    } catch (err) {
+        console.log(err)
+    }
+
 }

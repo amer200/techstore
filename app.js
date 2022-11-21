@@ -45,11 +45,10 @@ app.post('/admin/edit-categ/:cId', upload.single('img'));
 app.post('/admin/edit-prod/:pId', upload.array('img'));
 /********************************************************************* */
 //routes
-// const mainRoutes = require('./routes/main');
+const mainRoutes = require('./routes/main');
 const adminRoutes = require('./routes/admin');
 app.use('/admin', adminRoutes);
-
-// app.use('/', mainRoutes);
+app.use('/', mainRoutes)
 /********************************************************************* */
 
 mongoose.connect(db)
