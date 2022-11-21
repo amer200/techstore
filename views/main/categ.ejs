@@ -21,247 +21,37 @@
     </div>
     <!-- ///////////////////////////////////////////////// -->
     <div class="t-shirt-two">
+      <%categ.prods.forEach(p=>{%>
+        <div class="t-shirt-star1">
+          <div><a href="/prod/<%=p._id%>"><img src="<%=p.imgs[0]%>" class="T-shirt2"></a></div>
 
-      <div class="t-shirt-star1">
-        <div> <img src="img/Luminous T-shirt2.jpeg" class="T-shirt2"></div>
-
-        <!-- /// -->
-        <div class="text-star">
-          <p class="text-t-shirt-stars">تيشيرت مضيء في الظلام - مشع</p>
-          <div class="stars">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
+          <!-- /// -->
+          <div class="text-star">
+            <!-- <p class="text-t-shirt-stars">
+              
+            </p> -->
+            <!-- <div class="stars">
+              <img src="img/icons8-star-64.png" alt="" class="star-width">
+              <img src="img/icons8-star-64.png" alt="" class="star-width">
+              <img src="img/icons8-star-64.png" alt="" class="star-width">
+              <img src="img/icons8-star-64.png" alt="" class="star-width">
+            </div> -->
+          </div>
+          <!-- /// -->
+          <div class="display-t-shirt">
+            <div class="text-t-shirt-star1">
+              <%=p.name%>
+            </div>
+            <div class="text-t-shirt-star2">
+              <%=p.price%> $
+            </div>
+          </div>
+          <!-- ////////// -->
+          <div>
+            <button class="bay">شراء</button>
           </div>
         </div>
-        <!-- /// -->
-        <div class="display-t-shirt">
-          <div class="text-t-shirt-star1">تيشيرت نيون - باتمان</div>
-          <div class="text-t-shirt-star2">25,00</div>
-        </div>
-        <!-- ////////// -->
-        <div>
-          <button class="bay">شراء</button>
-        </div>
-      </div>
-      <!-- ////////////////////////////////////////////////////////////// -->
-      <div class="t-shirt-star1">
-        <div> <img src="img/Luminous T-shirt2.jpeg" class="T-shirt2"></div>
-
-        <!-- /// -->
-        <div class="text-star">
-          <p class="text-t-shirt-stars">تيشيرت مضيء في الظلام - مشع</p>
-          <div class="stars">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-          </div>
-        </div>
-        <!-- /// -->
-        <div class="display-t-shirt">
-          <div class="text-t-shirt-star1">تيشيرت نيون - باتمان</div>
-          <div class="text-t-shirt-star2">25,00</div>
-        </div>
-        <!-- ////////// -->
-        <div>
-          <button class="bay">شراء</button>
-        </div>
-      </div>
-      <!-- ////////////////////////////////////////////////////////////// -->
-      <div class="t-shirt-star1">
-        <div> <img src="img/Luminous T-shirt2.jpeg" class="T-shirt2"></div>
-
-        <!-- /// -->
-        <div class="text-star">
-          <p class="text-t-shirt-stars">تيشيرت مضيء في الظلام - مشع</p>
-          <div class="stars">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-          </div>
-        </div>
-        <!-- /// -->
-        <div class="display-t-shirt">
-          <div class="text-t-shirt-star1">تيشيرت نيون - باتمان</div>
-          <div class="text-t-shirt-star2">25,00</div>
-        </div>
-        <!-- ////////// -->
-        <div>
-          <button class="bay">شراء</button>
-        </div>
-      </div>
-      <!-- ////////////////////////////////////////////////////////////// -->
-      <div class="t-shirt-star1">
-        <div> <img src="img/Luminous T-shirt2.jpeg" class="T-shirt2"></div>
-
-        <!-- /// -->
-        <div class="text-star">
-          <p class="text-t-shirt-stars">تيشيرت مضيء في الظلام - مشع</p>
-          <div class="stars">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-          </div>
-        </div>
-        <!-- /// -->
-        <div class="display-t-shirt">
-          <div class="text-t-shirt-star1">تيشيرت نيون - باتمان</div>
-          <div class="text-t-shirt-star2">25,00</div>
-        </div>
-        <!-- ////////// -->
-        <div>
-          <button class="bay">شراء</button>
-        </div>
-      </div>
-      <!-- ////////////////////////////////////////////////////////////// -->
-      <div class="t-shirt-star1">
-        <div> <img src="img/Luminous T-shirt2.jpeg" class="T-shirt2"></div>
-
-        <!-- /// -->
-        <div class="text-star">
-          <p class="text-t-shirt-stars">تيشيرت مضيء في الظلام - مشع</p>
-          <div class="stars">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-          </div>
-        </div>
-        <!-- /// -->
-        <div class="display-t-shirt">
-          <div class="text-t-shirt-star1">تيشيرت نيون - باتمان</div>
-          <div class="text-t-shirt-star2">25,00</div>
-        </div>
-        <!-- ////////// -->
-        <div>
-          <button class="bay">شراء</button>
-        </div>
-      </div>
-      <!-- ////////////////////////////////////////////////////////////// -->
-      <div class="t-shirt-star1">
-        <div> <img src="img/Luminous T-shirt2.jpeg" class="T-shirt2"></div>
-
-        <!-- /// -->
-        <div class="text-star">
-          <p class="text-t-shirt-stars">تيشيرت مضيء في الظلام - مشع</p>
-          <div class="stars">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-          </div>
-        </div>
-        <!-- /// -->
-        <div class="display-t-shirt">
-          <div class="text-t-shirt-star1">تيشيرت نيون - باتمان</div>
-          <div class="text-t-shirt-star2">25,00</div>
-        </div>
-        <!-- ////////// -->
-        <div>
-          <button class="bay">شراء</button>
-        </div>
-      </div>
-      <!-- ////////////////////////////////////////////////////////////// -->
-      <div class="t-shirt-star1">
-        <div> <img src="img/Luminous T-shirt2.jpeg" class="T-shirt2"></div>
-
-        <!-- /// -->
-        <div class="text-star">
-          <p class="text-t-shirt-stars">تيشيرت مضيء في الظلام - مشع</p>
-          <div class="stars">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-          </div>
-        </div>
-        <!-- /// -->
-        <div class="display-t-shirt">
-          <div class="text-t-shirt-star1">تيشيرت نيون - باتمان</div>
-          <div class="text-t-shirt-star2">25,00</div>
-        </div>
-        <!-- ////////// -->
-        <div>
-          <button class="bay">شراء</button>
-        </div>
-      </div>
-      <!-- ////////////////////////////////////////////////////////////// -->
-      <div class="t-shirt-star1">
-        <div> <img src="img/Luminous T-shirt2.jpeg" class="T-shirt2"></div>
-
-        <!-- /// -->
-        <div class="text-star">
-          <p class="text-t-shirt-stars">تيشيرت مضيء في الظلام - مشع</p>
-          <div class="stars">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-          </div>
-        </div>
-        <!-- /// -->
-        <div class="display-t-shirt">
-          <div class="text-t-shirt-star1">تيشيرت نيون - باتمان</div>
-          <div class="text-t-shirt-star2">25,00</div>
-        </div>
-        <!-- ////////// -->
-        <div>
-          <button class="bay">شراء</button>
-        </div>
-      </div>
-      <!-- ////////////////////////////////////////////////////////////// -->
-      <div class="t-shirt-star1">
-        <div> <img src="img/Luminous T-shirt2.jpeg" class="T-shirt2"></div>
-
-        <!-- /// -->
-        <div class="text-star">
-          <p class="text-t-shirt-stars">تيشيرت مضيء في الظلام - مشع</p>
-          <div class="stars">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-          </div>
-        </div>
-        <!-- /// -->
-        <div class="display-t-shirt">
-          <div class="text-t-shirt-star1">تيشيرت نيون - باتمان</div>
-          <div class="text-t-shirt-star2">25,00</div>
-        </div>
-        <!-- ////////// -->
-        <div>
-          <button class="bay">شراء</button>
-        </div>
-      </div>
-      <!-- ////////////////////////////////////////////////////////////// -->
-      <div class="t-shirt-star1">
-        <div> <img src="img/Luminous T-shirt2.jpeg" class="T-shirt2"></div>
-
-        <!-- /// -->
-        <div class="text-star">
-          <p class="text-t-shirt-stars">تيشيرت مضيء في الظلام - مشع</p>
-          <div class="stars">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-            <img src="img/icons8-star-64.png" alt="" class="star-width">
-          </div>
-        </div>
-        <!-- /// -->
-        <div class="display-t-shirt">
-          <div class="text-t-shirt-star1">تيشيرت نيون - باتمان</div>
-          <div class="text-t-shirt-star2">25,00</div>
-        </div>
-        <!-- ////////// -->
-        <div>
-          <button class="bay">شراء</button>
-        </div>
-      </div>
-      <!-- ////////////////////////////////////////////////////////////// -->
+        <%})%>
     </div>
     <div class="logos-text t-shirt">
 

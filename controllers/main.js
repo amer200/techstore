@@ -17,5 +17,15 @@ exports.getCategPage = async (req, res) => {
     console.log(categ);
     res.render('main/categ', {
         categs: categs,
+        categ: categ
     });
+}
+exports.getProdPage = async (req, res) => {
+    const id = req.params.id;
+    const categs = await Categ.find();
+    const prod = await Prod.findById(id);
+    res.render('main/prod', {
+        categs: categs,
+        p: prod
+    })
 }
