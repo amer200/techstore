@@ -1,0 +1,76 @@
+<body dir="rtl">
+    <div class="container">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggleremo01" aria-controls="navbarToggleremo01" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarToggleremo01">
+                        <img class="class" src="/main/img/logo.jpg" alt="">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="اكتب اسم المنتج"
+                                aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit"><img src="/main/img/search.svg"
+                                    alt=""></button>
+                        </form>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">تسجيل الدخول</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">التسجيل</a>
+                            </li>
+                            <li>
+                                <img class="photos" src="/main/img/pack.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cotact"><a href="#">متجر إلكتروني</a>
+                        <a href="#"> معلومات عنا</a>
+                        <a href="#">الأحكام والشروط</a>
+                        <a href="#">مقالات</a>
+                        <a href="#">راسلنا </a>
+                        <a href="#">تواصل معنا</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+
+                    <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+                    <nav class="navbar navbar-expand-lg ">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+                                <div class="black-back">
+                                    <% categs.forEach(c=>{%>
+                                        <ul class="party">
+                                            <li> <img class="svg-img" src="<%=c.img%>" alt="<%=c.name%>"> <a
+                                                    href="/categ/<%=c._id%>">
+                                                    <%=c.name%>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <%})%>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
