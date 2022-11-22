@@ -29,3 +29,9 @@ exports.getProdPage = async (req, res) => {
         p: prod
     })
 }
+exports.getSignUp = async (req, res) => {
+    const categs = await Categ.find();
+    res.render('main/signup', {
+        categs: categs
+    })
+}
