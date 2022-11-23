@@ -41,15 +41,13 @@ exports.getSignUp = async (req, res) => {
 exports.postSignUp = async (req, res) => {
     const name = req.body.name;
     const surname = req.body.surname;
-    const password = req.body.password;
+    const password = req.body.password[0];
     const email = req.body.email;
     const city = req.body.city;
     const zip = req.body.zip;
     const country = req.body.country;
     const address = req.body.address;
     const phone = req.body.phone;
-    console.log(req.body)
-
     User.findOne({ email: email })
         .then(u => {
             if (u) {
@@ -73,7 +71,7 @@ exports.postSignUp = async (req, res) => {
                     })
                     user.save()
                         .then(u => {
-                            res.status(200).send(u);
+                            res.redirect('/')
                         })
                 });
             }
