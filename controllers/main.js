@@ -48,6 +48,7 @@ exports.postSignUp = async (req, res) => {
     const country = req.body.country;
     const address = req.body.address;
     const phone = req.body.phone;
+    console.log(req.body)
 
     User.findOne({ email: email })
         .then(u => {
