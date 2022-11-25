@@ -7,4 +7,5 @@ route.get('/categ/:id', mainController.getCategPage);
 route.get('/prod/:id', mainController.getProdPage);
 route.get('/signup', mainController.getSignUp);
 route.post('/signup', mainController.postSignUp);
+route.get('/login', mainController.getLogin);
 module.exports = route;

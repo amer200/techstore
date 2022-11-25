@@ -80,6 +80,36 @@ exports.postSignUp = async (req, res) => {
             console.log(err)
         })
 }
+exports.getLogin = async (req, res) => {
+    const categs = await Categ.find();
+    res.render('mian/login', {
+        categs: categs
+    })
+}
+exports.postLogin = (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    User.findOne({ email: email })
+        .then(u => {
+            if (!u) {
+                res.send({
+                    msg: 'البريد الاكتروني خطاء'
+                })
+            } else {
+                if (bcrypt.compareSync(password, u.password)) {
+                    req.session = u;
+                } else {
+                    res.send({
+                        msg: 'كلمة المرور خطاء'
+                    })
+                }
+            }
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
 function genRandonString(length) {
     var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
     var charLength = chars.length;
