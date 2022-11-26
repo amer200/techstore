@@ -9,4 +9,5 @@ route.get('/signup', authController.addUserLocal, mainController.getSignUp);
 route.post('/signup', authController.addUserLocal, mainController.postSignUp);
 route.get('/login', authController.addUserLocal, mainController.getLogin);
 route.post('/login', authController.addUserLocal, mainController.postLogin);
+route.get('/add-to-card/:id', authController.isUserAllow, authController.addUserLocal, mainController.addToCard);
 module.exports = route;

@@ -102,6 +102,7 @@ exports.postLogin = async (req, res) => {
             } else {
                 if (bcrypt.compareSync(password, u.password)) {
                     req.session.user = u;
+                    req.session.card = [];
                     res.redirect('/')
                 } else {
                     res.render('main/login', {
@@ -110,6 +111,20 @@ exports.postLogin = async (req, res) => {
                     })
                 }
             }
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+exports.addToCard = (req, res) => {
+    const prodId = req.params.id;
+    Prod.findById(prodId)
+        .then(p => {
+            req.session.card.push(p);
+            console.log(req.session);
+            res.send({
+                msg: 'ok'
+            })
         })
         .catch(err => {
             console.log(err)

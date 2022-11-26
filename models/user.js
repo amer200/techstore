@@ -13,6 +13,7 @@ const userScheam = mongoose.Schema({
     code: String,
     isactive: Boolean,
     orders: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Order' }],
+    card: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Prods' }]
 })
 
 module.exports = mongoose.model('User', userScheam)
