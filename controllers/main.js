@@ -130,6 +130,18 @@ exports.addToCard = (req, res) => {
             console.log(err)
         })
 }
+exports.getInfo = async (req, res) => {
+    const categs = await Categ.find();
+    res.render('main/info', {
+        categs: categs
+    })
+}
+exports.getCond = async (req, res) => {
+    const categs = await Categ.find();
+    res.render('main/cond', {
+        categs: categs
+    })
+}
 function genRandonString(length) {
     var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
     var charLength = chars.length;
