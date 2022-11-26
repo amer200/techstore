@@ -1,11 +1,12 @@
 const express = require('express');
 const route = express.Router();
 const mainController = require('../controllers/main');
-
-route.get('/', mainController.getMainPage);
-route.get('/categ/:id', mainController.getCategPage);
-route.get('/prod/:id', mainController.getProdPage);
-route.get('/signup', mainController.getSignUp);
-route.post('/signup', mainController.postSignUp);
-route.get('/login', mainController.getLogin);
+const authController = require('../controllers/auth');
+route.get('/', authController.addUserLocal, mainController.getMainPage);
+route.get('/categ/:id', authController.addUserLocal, mainController.getCategPage);
+route.get('/prod/:id', authController.addUserLocal, mainController.getProdPage);
+route.get('/signup', authController.addUserLocal, mainController.getSignUp);
+route.post('/signup', authController.addUserLocal, mainController.postSignUp);
+route.get('/login', authController.addUserLocal, mainController.getLogin);
+route.post('/login', authController.addUserLocal, mainController.postLogin);
 module.exports = route;

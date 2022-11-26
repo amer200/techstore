@@ -19,15 +19,23 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">تسجيل الدخول</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/signup">التسجيل</a>
-                            </li>
-                            <li>
-                                <img class="photos" src="/main/img/pack.png" alt="">
-                            </li>
+                            <%if(locals.user){%>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <%=locals.user.name%>
+                                    </a>
+                                </li>
+                                <%}else{%>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/login">تسجيل الدخول</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/signup">التسجيل</a>
+                                    </li>
+                                    <%}%>
+                                        <li>
+                                            <img class="photos" src="/main/img/pack.png" alt="">
+                                        </li>
                         </ul>
                     </div>
                 </div>

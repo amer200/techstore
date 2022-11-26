@@ -82,25 +82,30 @@ exports.postSignUp = async (req, res) => {
 }
 exports.getLogin = async (req, res) => {
     const categs = await Categ.find();
-    res.render('mian/login', {
-        categs: categs
+    res.render('main/login', {
+        categs: categs,
+        msg: false
     })
 }
-exports.postLogin = (req, res) => {
+exports.postLogin = async (req, res) => {
+    const categs = await Categ.find();
     const email = req.body.email;
     const password = req.body.password;
-
+    console.log(req.body)
     User.findOne({ email: email })
         .then(u => {
             if (!u) {
-                res.send({
+                res.render('main/login', {
+                    categs: categs,
                     msg: 'البريد الاكتروني خطاء'
                 })
             } else {
                 if (bcrypt.compareSync(password, u.password)) {
-                    req.session = u;
+                    req.session.user = u;
+                    res.redirect('/')
                 } else {
-                    res.send({
+                    res.render('main/login', {
+                        categs: categs,
                         msg: 'كلمة المرور خطاء'
                     })
                 }
