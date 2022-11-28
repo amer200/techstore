@@ -34,6 +34,11 @@
                                         required>
                                 </div>
                                 <div class="mb-3">
+                                    <label class="form-label">الخصم </label>
+                                    <input type="number" min="1" class="form-control" name="offer" placeholder="25%"
+                                        required>
+                                </div>
+                                <div class="mb-3">
                                     <label class="form-label">الكمية المتاحة من المنتج </label>
                                     <input type="number" min="0" class="form-control" name="qwant" placeholder="12"
                                         required>
@@ -100,6 +105,11 @@
                                                         <label class="form-label">سعر المنتج </label>
                                                         <input type="number" min="1" class="form-control" name="price"
                                                             placeholder="25$" value="<%=p.price%>" required>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label">الخصم </label>
+                                                        <input type="number" min="1" class="form-control" name="offer"
+                                                            placeholder="25%" value="<%=p.offer%>" required>
                                                     </div>
                                                     <div class="mb-3">
                                                         <label class="form-label">الكمية المتاحة من المنتج </label>

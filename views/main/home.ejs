@@ -119,444 +119,304 @@
   </div>
   </div>
   <!-- ///////////////////////////////////////////////// -->
-  <div class="java">
-    <div class="row row-m-l-none">
-      <div class="col ">
-        <div class="card column active" style="width: 8rem;">
-          <div class="card-bo">
-            <p>أعلى حسم</p>
-          </div>
-        </div>
-        <!-- ///////////////////////////////////////////////////////// -->
-        <div class="activee">
-          <div class="row activee">
-            <div class="col-lg-5 col-sm-12 carasol">
-              <div class="card colu">
-                <div class="card-bod">
-                  <p>9</p>
-                  <p>SECONDS </p>
-                </div>
-              </div>
-              <div class="card colu">
-                <div class="card-bod">
-                  <p>39</p>
-                  <p>MINUTES </p>
-                </div>
-              </div>
-              <div class="card colu">
-                <div class="card-bod">
-                  <p>1</p>
-                  <p>HOUR </p>
-                </div>
-              </div>
-              <div class="card colu">
-                <div class="card-bod">
-                  <p>3</p>
-                  <p>DAYS </p>
-                </div>
+  <%if(offer[0]){%>
+    <%}%>
+      <div class="java">
+        <div class="row row-m-l-none">
+          <div class="col ">
+            <div class="card column active" style="width: 8rem;">
+              <div class="card-bo">
+                <p>أعلى حسم</p>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-12 chhh">
-              <div>
-                <p> LANGIE S2 - مترجم صوتي مزود بإملاء إلكتروني (ترجمة 53 لغة) + دعم 3G SIM</p>
-                <p class="color-pamby">1 316,00 د.إ</p>
-                <p class="pice">آخر 14 قطع</p>
-                <button class="green"><img class="pho"
-                    src="/main/img/png-clipart-online-shopping-trade-business-shopping-centre-basket-icon-angle-text.png"
-                    alt="">
-                  أريد هذا !
-                </button>
-              </div>
-            </div>
-            <div class="col-lg-2 col-sm-12  yty ">
-              <div><img class="ssvg" src="/main/img/SVG/smal6200910163238-removebg-preview.png" alt=""></div>
-              <div><img class="ssvg" src="/main/img/SVG/download__6_-removebg-preview.png" alt=""></div>
-            </div>
-            <div class="col-lg-2 col-sm-12  child">
-              <img class="high-res" src="/main/img/High_Res_Zoom-16345-1-removebg-preview.png" alt="">
-              <p class="hot">HOT!</p>
-            </div>
-          </div>
-        </div>
-        <!-- ////////////////////////////////////////////////////// -->
-        <div class="col">
-          <div class="card colum" style="width: 8rem;">
-            <div class="card-bod">
-              <p class="buymet">جديدنا</p>
-            </div>
-          </div>
-          <!-- ///////////////////////////////////////// -->
-          <div class="javaa">
-            <div class="row">
-              <div class="col-lg-2 col-sm-4">
-                <div class="card">
-                  <div class="card-body">
-                    <a href="#" class="btn ">عرض المزيد</a>
-                  </div>
-                </div>
-              </div>
-              <% newProds.forEach(p=>{%>
-                <div class="col-lg-2 col-sm-4">
-                  <div class="card carder">
-                    <img class="none" src="<%=p.imgs[0]%>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <%=p.name%>
-                      </h5>
-                      <p class="seven">
-                        <%=p.price%> $
-                      </p>
-                      <a class="btn btn" onclick="addCard('<%=p._id%>')">اضافة الى قاءمة الشراء</a>
+            <!-- ///////////////////////////////////////////////////////// -->
+            <%if(offer[0]){%>
+              <div class="activee">
+                <div class="row activee">
+                  <div class="col-lg-5 col-sm-12 carasol">
+                    <div class="card colu">
+                      <div class="card-bod">
+                        <p>9</p>
+                        <p>SECONDS </p>
+                      </div>
+                    </div>
+                    <div class="card colu">
+                      <div class="card-bod">
+                        <p>39</p>
+                        <p>MINUTES </p>
+                      </div>
+                    </div>
+                    <div class="card colu">
+                      <div class="card-bod">
+                        <p>1</p>
+                        <p>HOUR </p>
+                      </div>
+                    </div>
+                    <div class="card colu">
+                      <div class="card-bod">
+                        <p>3</p>
+                        <p>DAYS </p>
+                      </div>
                     </div>
                   </div>
+                  <div class="col-lg-3 col-sm-12 chhh">
+                    <div>
+                      <p>
+                        <%=offer[0].desc%>
+                      </p>
+                      <p class="color-pamby">1 316,00 د.إ</p>
+                      <p class="pice">آخر 14 قطع</p>
+                      <button class="green"><img class="pho"
+                          src="/main/img/png-clipart-online-shopping-trade-business-shopping-centre-basket-icon-angle-text.png"
+                          alt="">
+                        أريد هذا !
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-sm-12  yty ">
+                    <div><img class="ssvg" src="/main/img/SVG/smal6200910163238-removebg-preview.png" alt=""></div>
+                    <div><img class="ssvg" src="/main/img/SVG/download__6_-removebg-preview.png" alt=""></div>
+                  </div>
+                  <div class="col-lg-2 col-sm-12  child">
+                    <img class="high-res" src="/main/img/High_Res_Zoom-16345-1-removebg-preview.png" alt="">
+                    <p class="hot">HOT!</p>
+                  </div>
                 </div>
-                <%})%>
-            </div>
-          </div>
-          <!-- ///////////////////////////////////////// -->
-        </div>
-        <!-- <div class="col">
-          <div class="card column" style="width: 8rem;">
-            <div class="card-bod">
-              <p class="buymet">الأكثر مبيعا</p>
-            </div>
-          </div> -->
+              </div>
+              <%}%>
+                <!-- ////////////////////////////////////////////////////// -->
+                <div class="col">
+                  <div class="card colum" style="width: 8rem;">
+                    <div class="card-bod">
+                      <p class="buymet">جديدنا</p>
+                    </div>
+                  </div>
+                  <!-- ///////////////////////////////////////// -->
+                  <div class="javaa">
+                    <div class="row">
+                      <div class="col-lg-2 col-sm-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <a href="#" class="btn ">عرض المزيد</a>
+                          </div>
+                        </div>
+                      </div>
+                      <% newProds.forEach(p=>{%>
+                        <div class="col-lg-2 col-sm-4">
+                          <div class="card carder">
+                            <img class="none" src="<%=p.imgs[0]%>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">
+                                <%=p.name%>
+                              </h5>
+                              <p class="seven">
+                                <%=p.price%> $
+                              </p>
+                              <a class="btn btn" onclick="addCard('<%=p._id%>')">اضافة الى قاءمة الشراء</a>
+                            </div>
+                          </div>
+                        </div>
+                        <%})%>
+                    </div>
+                  </div>
+                  <!-- ///////////////////////////////////////// -->
+                </div>
 
-        <!-- ///////////////////////////////////////// -->
-        <!-- <div class="income">
-            <div class="row">
-              <div class="col-lg-2 col-sm-4">
-                <div class="card">
-                  <div class="card-body">
-                    <a href="#" class="  btn-p ">عرض المزيد</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-4">
-                <div class="card carder">
-                  <div class=""> <img class="none"
-                      src="img/SVG/446-7_446-2-klasik-10ml-poppers-pack-3x-mix-removebg-preview.png" alt="..."></div>
-                  <div class="card-body">
-                    <h5 class="card-title">مجموعة عكس WiFi AHD مع التسجيل على…</h5>
-                    <p class="seven">1 196,00 د.إ</p>
-                    <a href="#" class="btn btn-p">شراء</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-4">
-                <div class="card carder">
-                  <img class="qdrl" src="img/SVG/446-7_446-2-klasik-10ml-poppers-pack-3x-mix-removebg-preview.png"
-                    class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Poppers Pack - 3x Mixed</h5>
-                    <p class="seven">7120,00 د.إ</p>
-                    <a href="#" class="btn btn-p">شراء</a>
-                  </div>
-                </div>
-              </div>
-              <div class=" col-lg-2 col-sm-4">
-                <div class="card carder">
-                  <img class="remo" src="img/SVG/848-1_new-poppersmensi-removebg-preview.png" class="card-img-top"
-                    alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Poppers Orgasmus</h5>
-                    <p class="seven">48,00 د.إ</p>
-                    <a href="#" class="btn btn-p">شراء</a>
-                  </div>
-                </div>
-              </div>
-              <div class=" col-lg-2 col-sm-4">
-                <div class="card carder">
-                  <img class="click" src="img/SVG/e2351f57681ce526fc9681039d109d-removebg-preview.png"
-                    class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">RUSH Ultra Strong - 3xpack</h5>
-                    <p class="seven">156,00 د.إ</p>
-                    <a href="#" class="btn btn-p">شراء</a>
-                  </div>
-                </div>
-              </div>
-              <div class=" col-lg-2 col-sm-4">
-                <div class="card carder">
-                  <img class="click" src="img/SVG/e2351f57681ce526fc9681039d109d-removebg-preview.png"
-                    class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">RUSH Ultra Strong - 3xpack</h5>
-                    <p class="seven">156,00 د.إ</p>
-                    <a href="#" class="btn btn-p">شراء</a>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </div>
+      </div>
+      <!-- //////////////////////////////////////////////////////// -->
+      </div>
 
+      <div class="rusa">
+        <p>لماذا تشتري منا</p>
+        <p>نحن في السوق لمدة 10 سنوات! مختصون في الهدايا والأدوات حول العالم!</p>
+        <div class="row">
+          <div class="col-lg-4 col-sm-4">
+            <div class="card-top">
+              <div class="card-body">
+                <h1 class="card-title">نُقدم هذه الخدمات الإضافية</h1>
+                <li class="hours">تبديل المنتجات مجاناً في غضون 30 يومًا</li>
+                <li class="hours">ضمان المنتجات لمدة 24 شهرًا</li>
+                <li class="hours">ضمان إعادة الأموال خلال 14 يوم</li>
+                <li class="hours">نتعامل بحسب شهادة الأيزو ISO 9001: 2015 ، SAEC</li>
+                <button>معلومات اكثر</button>
+              </div>
             </div>
-          </div> -->
-        <!-- ///////////////////////////////////////// -->
-        <!-- </div>
-        <div class="col">
-          <div class="card column" style="width: 8rem;">
-            <div class="card-bod">
-              <p class="buymet"> موصى به</p>
+          </div>
+          <div class="col-lg-4 col-sm-4">
+            <div class="card-top">
+              <div class="card-body">
+                <h5 class="card-title">مُستعدون لمساعدتك</h5>
+                <p class="proper">فريق مدرّب بشكل احترافي وجاهز لحل كافة متطلّباتك الفردية ، وتقديم المشورة بالمنتج
+                  الأنسب
+                  لك. نحلّ كل مَطلب بشكل فردي. اسأل عن أي منتج أومواصفاته - نحن هنا من أجلك.</p>
+                <button>طرح سؤال</button>
+              </div>
             </div>
-          </div> -->
+          </div>
+          <div class="col-lg-4 col-sm-4">
+            <div class="card-top">
+              <div class="card-body">
+                <div class="day">
+                  <div class="photographic">
+                    <img class="obeed" src="/main/img/SVG/01b5eebd147689c2e43542ed73ea3e747ac59916.png" alt="">
+                  </div>
+                  <div class="speed">البريد السريع GLS والتسليم في غضون 3-5 أيام من الإرسال.</div>
+                </div>
+                <div class="day">
+                  <div class="photographic">
+                    <img class="obeed" src="/main/img/SVG/images-removebg-preview (1).png" alt="">
+                  </div>
+                  <div class="speed"> بالبريد الدولي في غضون 5 أيام من الإرسال.</div>
+                </div>
+                <div class="day">
+                  <div class="photographic">
+                    <img class="obeed" src="/main/img/SVG/download-removebg-preview.png" alt="">
+                  </div>
+                  <div class="speed"> شحن لجميع أنحاء العالم مباشرة على عنوان منزلك.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row unur">
+          <button class="corrder">اذهب إلى المدونة</button>
+          <h1 class="notes">الجديد من مدوناتنا</h1>
+          <div class="col-lg-4 col-sm-4">
+            <div class="card-top">
+              <img class="mania" src="/main/img/SVG/download__2_-removebg-preview.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">أنت تقوم بالتسوق الآمن معنا!</h5>
+                <p class="card-text cool">حصل المتجر الإلكترونيyour-spy.com على شهادة علامة الجودة - شهادة SAEC - للتسوق
+                  الآمن. أصبحنا عضوًا في مجموعة النخبة بين المتاجر عبر الإنترنت.</p>
+                <a href="#" class="btn btn-primary">اقرأ أكثر</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-4">
+            <div class="card-top">
+              <img class="mania" src="/main/img/SVG/تشرت (1).webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">لا تشتري تيشيرتات رخيصة</h5>
+                <p class="card-text cool">لا تشتري تيشرتات LED رخيصة. معظم تيشرتات Equalizer التي يتم شراؤها في الخارج
+                  لا
+                  يتم تصنيعها بشكل مختلف فحسب ، بل غالبًا تكون فاشلة.</p>
+                <a href="#" class="btn btn-primary">اقرأ أكثر</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-4">
+            <div class="card-top">
+              <img class="mania"
+                src="/main/img/SVG/png-clipart-iso-9000-certification-international-organization-for-standardization-quality-management-system-iso-9001-company-text-removebg-preview.png"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">حصلنا على : شهادة الجودة ايزو EN ISO 9001: 2008</h5>
+                <p class="card-text cool">حصلت شركة Media Leaders Ltd. على شهادة الأيزو المعترف بها دوليًا لنظام إدارة
+                  الجودة CMS EN ISO 9001: 2008</p>
+                <a href="#" class="btn btn-primary">اقرأ أكثر</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+      <!-- //////////////////////////////////// -->
 
-        <!-- ///////////////////////////////////////// -->
-        <!-- <div class="incom">
-            <div class="row">
-              <div class="col-lg-2 col-sm-4">
-                <div class="card">
-                  <div class="card-body">
-                    <a href="#" class="  btn-o ">عرض المزيد</a>
-                  </div>
+      <!-- </div> -->
+      <footer>
+        <div class="footer">
+          <div class="placeholder">
+            <div class="bussnis">
+              <div><img class="bussinsman"
+                  src="/main/img/SVG/1000_F_232879585_VrjtACAFvzHRuEP8fH8K5EhRkOThuS4G-removebg-preview (1).png" alt="">
+              </div>
+              <div>
+                <p> Mario</p>
+                <p>خدمة الزبائن</p>
+                <div> <img class="email-icon" src="/main/img/SVG/icons8-secured-letter-50.png" alt="">
+                  <span> m.bruchanik@cool-mania.eu</span>
+                </div>
+                <div>
+                  <img class="email-icon" src="/main/img/SVG/icons8-smartphone-24.png" alt="">
+                  <span> +421 907 211 712</span>
                 </div>
               </div>
-              <div class=" col-lg-2 col-sm-4">
-                <div class="card carder">
-                  <div class=""> <img class="none" src="img/SVG/amsterdam-special-removebg-preview.png"
-                      class="card-img-top" alt="..."></div>
-                  <div class="card-body">
-                    <h5 class="card-title">XXX Hard ULTRA STRONG 15 ml
-                    </h5>
-                    <p class="seven">100,00 د.إ</p>
-                    <a href="#" class="btn btn-o">شراء</a>
-                  </div>
-                </div>
-              </div>
-              <div class=" col-lg-2 col-sm-4">
-                <div class="card carder">
-                  <img class="qdl" src="img/SVG/KG870NV-1-removebg-preview.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">فخاخ الصور ترسل رسائل MMS -…</h5>
-                    <p class="seven">1 036,00 د.إ</p>
-                    <a href="#" class="btn btn-o">شراء</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-4">
-                <div class="card carder">
-                  <img class="eo" src="img/SVG/amsterdam-special-removebg-preview.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Amsterdam Special - Big Bottle</h5>
-                    <p class="seven">116,00 د.إ</p>
-                    <a href="#" class="btn btn-o">شراء</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-4">
-                <div class="card carder">
-                  <img class="cl" src="img/SVG/a04f1509eacd54d1eb1e0038ef842f-removebg-preview.png" class="card-img-top"
-                    alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Poppers Orgasmus</h5>
-                    <p class="seven">148,00 د.إ</p>
-                    <a href="#" class="btn btn-o">شراء</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-4">
-                <div class="card carder">
-                  <img class="cl" src="img/SVG/a04f1509eacd54d1eb1e0038ef842f-removebg-preview.png" class="card-img-top"
-                    alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Poppers Orgasmus</h5>
-                    <p class="seven">148,00 د.إ</p>
-                    <a href="#" class="btn btn-o">شراء</a>
-                  </div>
-                </div>
-              </div>
-
             </div>
-          </div> -->
-        <!-- ///////////////////////////////////////// -->
-      </div>
-    </div>
-  </div>
-  <!-- //////////////////////////////////////////////////////// -->
-  </div>
-
-  <div class="rusa">
-    <p>لماذا تشتري منا</p>
-    <p>نحن في السوق لمدة 10 سنوات! مختصون في الهدايا والأدوات حول العالم!</p>
-    <div class="row">
-      <div class="col-lg-4 col-sm-4">
-        <div class="card-top">
-          <div class="card-body">
-            <h1 class="card-title">نُقدم هذه الخدمات الإضافية</h1>
-            <li class="hours">تبديل المنتجات مجاناً في غضون 30 يومًا</li>
-            <li class="hours">ضمان المنتجات لمدة 24 شهرًا</li>
-            <li class="hours">ضمان إعادة الأموال خلال 14 يوم</li>
-            <li class="hours">نتعامل بحسب شهادة الأيزو ISO 9001: 2015 ، SAEC</li>
-            <button>معلومات اكثر</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-4">
-        <div class="card-top">
-          <div class="card-body">
-            <h5 class="card-title">مُستعدون لمساعدتك</h5>
-            <p class="proper">فريق مدرّب بشكل احترافي وجاهز لحل كافة متطلّباتك الفردية ، وتقديم المشورة بالمنتج الأنسب
-              لك. نحلّ كل مَطلب بشكل فردي. اسأل عن أي منتج أومواصفاته - نحن هنا من أجلك.</p>
-            <button>طرح سؤال</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-4">
-        <div class="card-top">
-          <div class="card-body">
-            <div class="day">
-              <div class="photographic">
-                <img class="obeed" src="/main/img/SVG/01b5eebd147689c2e43542ed73ea3e747ac59916.png" alt="">
+            <!-- //////////////////////////////////////////// -->
+            <div class="">
+              <div class="form">
+                <div><input class="form-control form-control-lg " type="text"
+                    placeholder="أدخل بريدك الإلكتروني واشترك بالنشرة الإعلاني "></div>
+                <div><button class="subsecraib">اشترك</button></div>
               </div>
-              <div class="speed">البريد السريع GLS والتسليم في غضون 3-5 أيام من الإرسال.</div>
-            </div>
-            <div class="day">
-              <div class="photographic">
-                <img class="obeed" src="/main/img/SVG/images-removebg-preview (1).png" alt="">
+              <div class="iconess">
+                <img class="icon1" src="/main/img/SVG/facebook-2815970_1920-removebg-preview.png " alt="">
+                <img class="icon1" src="/main/img/SVG/instagram-01-removebg-preview.png" alt="">
+                <img class="icon1" src="/main/img/SVG/YouTube_social_white_squircle.svg-removebg-preview.png" alt="">
               </div>
-              <div class="speed"> بالبريد الدولي في غضون 5 أيام من الإرسال.</div>
-            </div>
-            <div class="day">
-              <div class="photographic">
-                <img class="obeed" src="/main/img/SVG/download-removebg-preview.png" alt="">
-              </div>
-              <div class="speed"> شحن لجميع أنحاء العالم مباشرة على عنوان منزلك.</div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row unur">
-      <button class="corrder">اذهب إلى المدونة</button>
-      <h1 class="notes">الجديد من مدوناتنا</h1>
-      <div class="col-lg-4 col-sm-4">
-        <div class="card-top">
-          <img class="mania" src="/main/img/SVG/download__2_-removebg-preview.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">أنت تقوم بالتسوق الآمن معنا!</h5>
-            <p class="card-text cool">حصل المتجر الإلكترونيyour-spy.com على شهادة علامة الجودة - شهادة SAEC - للتسوق
-              الآمن. أصبحنا عضوًا في مجموعة النخبة بين المتاجر عبر الإنترنت.</p>
-            <a href="#" class="btn btn-primary">اقرأ أكثر</a>
+        <div class="row preview">
+          <div class="col-lg-6 col-md-12">
+            <div>
+              <p class="para">يقدم متجركوول مانيا الإلكتروني هدايا فريدة من نوعها والأروع مثل الأدوات وقمصان كرات
+                الديسكو
+                ذات الإضاءة الأصلية للحفلات، وإبازيم أحزمة LED متحركة قابلة للبرمجة، وفي متجر التجسس لدينا كاميرات تجسس
+                مخفية، وعطور سائلة قوية ونافذة في متجر بوبرس ، والعديد من المنتجات الأخرى مثل كاميرات السيارة التي يمكنك
+                شراؤها بسعر جيد لدينا. متجر إلكتروني معتمد - التسوق آمن فيyour-spy.com.</p>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-4">
-        <div class="card-top">
-          <img class="mania" src="/main/img/SVG/تشرت (1).webp" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">لا تشتري تيشيرتات رخيصة</h5>
-            <p class="card-text cool">لا تشتري تيشرتات LED رخيصة. معظم تيشرتات Equalizer التي يتم شراؤها في الخارج لا
-              يتم تصنيعها بشكل مختلف فحسب ، بل غالبًا تكون فاشلة.</p>
-            <a href="#" class="btn btn-primary">اقرأ أكثر</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-4">
-        <div class="card-top">
-          <img class="mania"
-            src="/main/img/SVG/png-clipart-iso-9000-certification-international-organization-for-standardization-quality-management-system-iso-9001-company-text-removebg-preview.png"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">حصلنا على : شهادة الجودة ايزو EN ISO 9001: 2008</h5>
-            <p class="card-text cool">حصلت شركة Media Leaders Ltd. على شهادة الأيزو المعترف بها دوليًا لنظام إدارة
-              الجودة CMS EN ISO 9001: 2008</p>
-            <a href="#" class="btn btn-primary">اقرأ أكثر</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- </div> -->
-  <!-- //////////////////////////////////// -->
-
-  <!-- </div> -->
-  <footer>
-    <div class="footer">
-      <div class="placeholder">
-        <div class="bussnis">
-          <div><img class="bussinsman"
-              src="/main/img/SVG/1000_F_232879585_VrjtACAFvzHRuEP8fH8K5EhRkOThuS4G-removebg-preview (1).png" alt=""></div>
-          <div>
-            <p> Mario</p>
-            <p>خدمة الزبائن</p>
-            <div> <img class="email-icon" src="/main/img/SVG/icons8-secured-letter-50.png" alt="">
-              <span> m.bruchanik@cool-mania.eu</span>
+          <div class="col-lg-6 col-md-12 unnamed">
+            <div>
+              <img class="promo" src="/main/img/SVG/fondy-removebg-preview.png" alt="">
+              <img class="promo" src="/main/img/SVG/1200x630wa-removebg-preview.png" alt="">
+              <img class="promo" src="/main/img/SVG/Mastercard-logo.svg-removebg-preview.png" alt="">
             </div>
             <div>
-              <img class="email-icon" src="/main/img/SVG/icons8-smartphone-24.png" alt="">
-              <span> +421 907 211 712</span>
+              <img class="promo" src="/main/img/SVG/fondy-removebg-preview.png" alt="">
+              <img class="promo" src="/main/img/SVG/1200x630wa-removebg-preview.png" alt="">
+              <img class="promo" src="/main/img/SVG/unnamed-removebg-preview.png" alt="">
+              <img class="promo" src="/main/img/SVG/2560px-Apple_Pay_logo.svg-removebg-preview.png" alt="">
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="row preview">
+          <div class="col-lg-6 col-md-12">
+            <div>
+              <p class="para">© Copyright 2010-2022 – Media Leaders s.r.o.</p>
             </div>
           </div>
-        </div>
-        <!-- //////////////////////////////////////////// -->
-        <div class="">
-          <div class="form">
-            <div><input class="form-control form-control-lg " type="text"
-                placeholder="أدخل بريدك الإلكتروني واشترك بالنشرة الإعلاني "></div>
-            <div><button class="subsecraib">اشترك</button></div>
+          <div class="col-lg-6 col-md-12 unnamed">
+            <div>
+              <span><a href=""> متجر إلكتروني </a></span>
+              <span><a href=""> معلومات عنا </a></span>
+              <span><a href=""> الأحكام والشروط </a></span>
+              <span><a href=""> مقالات </a></span>
+              <span><a href=""> راسلنا </a></span>
+              <span><a href=""> تواصل معنا </a></span>
+            </div>
+
           </div>
-          <div class="iconess">
-            <img class="icon1" src="/main/img/SVG/facebook-2815970_1920-removebg-preview.png " alt="">
-            <img class="icon1" src="/main/img/SVG/instagram-01-removebg-preview.png" alt="">
-            <img class="icon1" src="/main/img/SVG/YouTube_social_white_squircle.svg-removebg-preview.png" alt="">
+          <hr>
+          <div>
+            <span class="location">يستخدم هذا الموقع ملفات تعريف الارتباط لضمان عمل الموقع وللحصول على إحصائيات حركة
+              المرور
+              على الموقع</span>
+            <span><a class="location" href="">مزيد من المعلومات .</a></span>
           </div>
         </div>
+      </footer>
       </div>
-    </div>
-    <div class="row preview">
-      <div class="col-lg-6 col-md-12">
-        <div>
-          <p class="para">يقدم متجركوول مانيا الإلكتروني هدايا فريدة من نوعها والأروع مثل الأدوات وقمصان كرات الديسكو
-            ذات الإضاءة الأصلية للحفلات، وإبازيم أحزمة LED متحركة قابلة للبرمجة، وفي متجر التجسس لدينا كاميرات تجسس
-            مخفية، وعطور سائلة قوية ونافذة في متجر بوبرس ، والعديد من المنتجات الأخرى مثل كاميرات السيارة التي يمكنك
-            شراؤها بسعر جيد لدينا. متجر إلكتروني معتمد - التسوق آمن فيyour-spy.com.</p>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12 unnamed">
-        <div>
-          <img class="promo" src="/main/img/SVG/fondy-removebg-preview.png" alt="">
-          <img class="promo" src="/main/img/SVG/1200x630wa-removebg-preview.png" alt="">
-          <img class="promo" src="/main/img/SVG/Mastercard-logo.svg-removebg-preview.png" alt="">
-        </div>
-        <div>
-          <img class="promo" src="i/main/img/SVG/fondy-removebg-preview.png" alt="">
-          <img class="promo" src="i/main/img/SVG/1200x630wa-removebg-preview.png" alt="">
-          <img class="promo" src="i/main/img/SVG/unnamed-removebg-preview.png" alt="">
-          <img class="promo" src="i/main/img/SVG/2560px-Apple_Pay_logo.svg-removebg-preview.png" alt="">
-        </div>
-
-      </div>
-    </div>
-
-
-    <div class="row preview">
-      <div class="col-lg-6 col-md-12">
-        <div>
-          <p class="para">© Copyright 2010-2022 – Media Leaders s.r.o.</p>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12 unnamed">
-        <div>
-          <span><a href=""> متجر إلكتروني </a></span>
-          <span><a href=""> معلومات عنا </a></span>
-          <span><a href=""> الأحكام والشروط </a></span>
-          <span><a href=""> مقالات </a></span>
-          <span><a href=""> راسلنا </a></span>
-          <span><a href=""> تواصل معنا </a></span>
-        </div>
-
-      </div>
-      <hr>
-      <div>
-        <span class="location">يستخدم هذا الموقع ملفات تعريف الارتباط لضمان عمل الموقع وللحصول على إحصائيات حركة المرور
-          على الموقع</span>
-        <span><a class="location" href="">مزيد من المعلومات .</a></span>
-      </div>
-    </div>
-  </footer>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
-  <script src="/main/js/main.js"></script>
-  </body>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+      <script src="/main/js/main.js"></script>
+      </body>
 
 </html>

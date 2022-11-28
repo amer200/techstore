@@ -7,10 +7,9 @@ exports.getMainPage = async (req, res) => {
     try {
         const categs = await Categ.find();
         const prods = await Prod.find().populate('categ');
-        console.log(prods)
         res.render('admin/prods', {
             c: categs,
-            p: prods
+            p: prods,
         })
     }
     catch (err) {
@@ -25,6 +24,7 @@ exports.addProd = async (req, res) => {
     const qwant = req.body.qwant;
     const categId = req.body.categ;
     const desc = req.body.desc;
+    const offer = req.body.offer;
     const imgs = req.files;
     const categ = await Categ.findById(categId);
     const paths = [];
@@ -38,6 +38,7 @@ exports.addProd = async (req, res) => {
         quant: qwant,
         categ: categId,
         desc: desc,
+        offer: offer,
         imgs: paths
     })
     prod.save()
@@ -59,6 +60,7 @@ exports.editProd = (req, res) => {
     const qwant = req.body.qwant;
     const categId = req.body.categ;
     const desc = req.body.desc;
+    const offer = req.body.offer;
     Prod.findById(id)
         .then(p => {
             p.name = name;
@@ -66,6 +68,7 @@ exports.editProd = (req, res) => {
             p.quant = qwant;
             p.Categ = categId;
             p.desc = desc;
+            p.offer = offer;
             if (req.files) {
                 req.files.forEach(i => {
                     p.imgs.push(i.path.split('public')[1]);
