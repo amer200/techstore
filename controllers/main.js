@@ -1,19 +1,21 @@
 const Categ = require('../models/categ');
 const Prod = require('../models/prod');
 const User = require('../models/user');
+const Order = require('../models/order');
 const bcrypt = require('bcrypt');
-const { off } = require('../models/prod');
 const saltRounds = 10;
 exports.getMainPage = async (req, res) => {
     const categs = await Categ.find();
     const randProds = await Prod.aggregate([{ $sample: { size: 3 } }]).limit(5);
     const newProds = await Prod.find().sort({ _id: -1 }).limit(5);
     const offer = await Prod.find().sort({ "offer": -1 }).limit(1);
+    const orders = await Order.find();
     res.render('main/home', {
         categs: categs,
         randProds: randProds,
         newProds: newProds,
-        offer: offer
+        offer: offer,
+        orders: orders.length
     })
 }
 exports.getCategPage = async (req, res) => {

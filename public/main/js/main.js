@@ -1,4 +1,5 @@
 const addCard = (pId) => {
+    console.log(pId)
     fetch(`/add-to-card/${pId}`)
         .then(res => {
             return res.json();

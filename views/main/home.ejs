@@ -90,7 +90,9 @@
       <div class="card-bodyy">
         <div class="propal">
           <div class="card-title">تلقينا الطلب رقم.</div>
-          <div class="card-t"> 113 946</div>
+          <div class="card-t">
+            <%=orders%>
+          </div>
         </div>
       </div>
     </div>
@@ -164,9 +166,11 @@
                       <p>
                         <%=offer[0].desc%>
                       </p>
-                      <p class="color-pamby">1 316,00 د.إ</p>
-                      <p class="pice">آخر 14 قطع</p>
-                      <button class="green"><img class="pho"
+                      <p class="color-pamby">
+                        <%=(offer[0].offer * offer[0].price) / 100%> $
+                      </p>
+                      <p class="pice">آخر <%=offer[0].quant%> قطع</p>
+                      <button class="green" onclick="addCard('<%=offer[0]._id%>')"><img class="pho"
                           src="/main/img/png-clipart-online-shopping-trade-business-shopping-centre-basket-icon-angle-text.png"
                           alt="">
                         أريد هذا !
@@ -174,8 +178,9 @@
                     </div>
                   </div>
                   <div class="col-lg-2 col-sm-12  yty ">
-                    <div><img class="ssvg" src="/main/img/SVG/smal6200910163238-removebg-preview.png" alt=""></div>
-                    <div><img class="ssvg" src="/main/img/SVG/download__6_-removebg-preview.png" alt=""></div>
+                    <%offer[0].imgs.forEach(i=>{%>
+                      <div><img class="ssvg" src="<%=i%>" alt=""></div>
+                      <%})%>
                   </div>
                   <div class="col-lg-2 col-sm-12  child">
                     <img class="high-res" src="/main/img/High_Res_Zoom-16345-1-removebg-preview.png" alt="">
