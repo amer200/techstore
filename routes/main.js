@@ -12,5 +12,5 @@ route.post('/login', authController.addUserLocal, mainController.postLogin);
 route.get('/add-to-card/:id', authController.isUserAllow, authController.addUserLocal, mainController.addToCard);
 route.get('/info', authController.addUserLocal, mainController.getInfo);
 route.get('/cond', authController.addUserLocal, mainController.getCond);
-
+route.get('/contact', authController.addUserLocal, mainController.getCntactUs);
 module.exports = route;

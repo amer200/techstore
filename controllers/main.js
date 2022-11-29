@@ -147,6 +147,13 @@ exports.getCond = async (req, res) => {
         categs: categs
     })
 }
+exports.getCntactUs = async (req, res) =>{
+    const categs = await Categ.find();
+    res.render('main/contact', {
+        categs: categs
+    })
+}
+/***********************************************************************/
 function genRandonString(length) {
     var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
     var charLength = chars.length;

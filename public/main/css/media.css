@@ -194,6 +194,16 @@
             grid-template-columns: auto;
            
         }
+        .three-grid-picture{
+            display: grid;
+            grid-template-columns: auto  auto;
+            justify-content: center;
+        }
+        .شهادة{
+            /* width: 10rem; */
+            width: 100%;
+
+        }
 }
 
 
@@ -393,8 +403,33 @@ width: 50%;
             grid-template-columns: auto;
            
         }
+        .three-grid-picture{
+            display: grid;
+            grid-template-columns: auto ;
+        }
+        .شهادة{
+            /* width: 5rem; */
+            width: 100%;
+        }
+        p.page-iformation-about-us{
+            font-size: 1rem;
+        }
+        div.page-iformation-about-us{
+            font-size: 10px;
+        }
+        h2.page-iformation-about-us{
+            font-size: 1rem;
+        }
+        .form-arabic{
+            
+            grid-template-columns: auto;
+      
+        }
+        .arabic-forms{
+            width: 100%;
+            
+        }
     }
-
 
 
 
