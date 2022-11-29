@@ -14,4 +14,5 @@ route.get('/info', authController.addUserLocal, mainController.getInfo);
 route.get('/cond', authController.addUserLocal, mainController.getCond);
 route.get('/contact', authController.addUserLocal, mainController.getCntactUs);
 route.post('/contact', mainController.postContactUS);
+route.get('/card', authController.addUserLocal, mainController.getShopBag);
 module.exports = route;

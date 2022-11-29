@@ -175,6 +175,12 @@ exports.postContactUS = (req, res) => {
             console.log(err)
         })
 }
+exports.getShopBag = async (req, res) => {
+    const categs = await Categ.find();
+    res.render('main/shop-bag', {
+        categs: categs
+    })
+}
 /***********************************************************************/
 function genRandonString(length) {
     var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
