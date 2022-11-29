@@ -205,3 +205,15 @@ exports.getOrders = async (req, res) => {
     }
 
 }
+/** users */
+exports.getUsers = (req, res) => {
+    User.find()
+        .then(u => {
+            res.render('admin/users', {
+                users: u
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
