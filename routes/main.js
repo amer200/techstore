@@ -13,4 +13,5 @@ route.get('/add-to-card/:id', authController.isUserAllow, authController.addUser
 route.get('/info', authController.addUserLocal, mainController.getInfo);
 route.get('/cond', authController.addUserLocal, mainController.getCond);
 route.get('/contact', authController.addUserLocal, mainController.getCntactUs);
+route.post('/contact', mainController.postContactUS);
 module.exports = route;

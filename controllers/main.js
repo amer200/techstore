@@ -2,6 +2,7 @@ const Categ = require('../models/categ');
 const Prod = require('../models/prod');
 const User = require('../models/user');
 const Order = require('../models/order');
+const Msg = require('../models/msg');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 exports.getMainPage = async (req, res) => {
@@ -147,11 +148,32 @@ exports.getCond = async (req, res) => {
         categs: categs
     })
 }
-exports.getCntactUs = async (req, res) =>{
+exports.getCntactUs = async (req, res) => {
     const categs = await Categ.find();
     res.render('main/contact', {
         categs: categs
     })
+}
+exports.postContactUS = (req, res) => {
+    const name = req.body.name;
+    const email = req.body.email;
+    const phone = req.body.phone;
+    const subject = req.body.subject;
+    const msg = req.body.msg;
+
+    const mssg = new Msg({
+        name: name,
+        email: email,
+        phone: phone,
+        subject: subject
+    })
+    mssg.save()
+        .then(m => {
+            res.redirect('/');
+        })
+        .catch(err => {
+            console.log(err)
+        })
 }
 /***********************************************************************/
 function genRandonString(length) {
