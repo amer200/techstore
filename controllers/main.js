@@ -165,6 +165,7 @@ exports.postContactUS = (req, res) => {
         name: name,
         email: email,
         phone: phone,
+        msg: msg,
         subject: subject
     })
     mssg.save()
@@ -177,8 +178,10 @@ exports.postContactUS = (req, res) => {
 }
 exports.getShopBag = async (req, res) => {
     const categs = await Categ.find();
+    const prods = req.session.card;
     res.render('main/shop-bag', {
-        categs: categs
+        categs: categs,
+        prods: prods
     })
 }
 /***********************************************************************/
