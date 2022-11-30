@@ -124,10 +124,35 @@ exports.postLogin = async (req, res) => {
 }
 exports.addToCard = (req, res) => {
     const prodId = req.params.id;
-    Prod.findById(prodId)
-        .then(p => {
-            req.session.card.push(p);
-            console.log(req.session);
+    const userId = req.session.user._id;
+    User.findById(userId)
+        .then(u => {
+            let test = false;
+            u.card.forEach(c => {
+                if (c.toString() == prodId) {
+                    req.session.card.forEach(sc => {
+                        if (sc._id.toString() == prodId) {
+                            return sc.cardQ++, test = true
+                        }
+                    })
+                }
+            });
+            if (test) {
+                console.log(test)
+                return res.send({
+                    msg: 'ok'
+                })
+            } else {
+                Prod.findById(prodId)
+                    .then(p => {
+                        p.cardQ = 1;
+                        req.session.card.push(p)
+                    })
+                u.card.push(prodId);
+                return u.save()
+            }
+        })
+        .then(u => {
             res.send({
                 msg: 'ok'
             })
@@ -178,7 +203,7 @@ exports.postContactUS = (req, res) => {
 }
 exports.getShopBag = async (req, res) => {
     const categs = await Categ.find();
-    const prods = req.session.card;
+    let prods = req.session.card;
     res.render('main/shop-bag', {
         categs: categs,
         prods: prods

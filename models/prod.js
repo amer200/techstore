@@ -7,6 +7,7 @@ const prodSchema = mongoose.Schema({
     desc: String,
     offer: Number,
     imgs: [String],
+    cardQ: Number,
     categ: { type: mongoose.Schema.Types.ObjectId, ref: 'Categ' }
 })
 
