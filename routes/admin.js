@@ -17,6 +17,7 @@ route.post('/edit-categ/:cId', adminControllers.editCateg)
 route.get('/remove-categ/:cId', adminControllers.removeCateg)
 /* orders*/
 route.get('/orders', adminControllers.getOrders)
+route.get('/change-order-stat/:stat/:id', adminControllers.changeOrderStat);
 /**users */
 route.get('/users', adminControllers.getUsers);
 module.exports = route;

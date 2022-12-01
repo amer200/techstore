@@ -195,7 +195,7 @@ exports.removeProd = (req, res) => {
 /**orders */
 exports.getOrders = async (req, res) => {
     try {
-        const orders = await Order.find().populate(['prods', 'user']);
+        const orders = await Order.find().populate('user');
         console.log(orders);
         res.render('admin/orders', {
             orders: orders
@@ -204,6 +204,23 @@ exports.getOrders = async (req, res) => {
         console.log(err)
     }
 
+}
+exports.changeOrderStat = (req, res) => {
+    const stat = req.params.stat;
+    const id = req.params.id;
+    Order.findById(id)
+        .then(o => {
+            o.status = stat;
+            return o.save()
+        })
+        .then(o => {
+            res.send({
+                msg: 'ok'
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
 }
 /** users */
 exports.getUsers = (req, res) => {

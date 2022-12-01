@@ -172,7 +172,6 @@ exports.getShopBag = async (req, res) => {
     const categs = await Categ.find();
     let prods = req.session.card;
     let prodsIds;
-    // const products = await Prod.find({ "_id": { "$in": prodsIds } })
     let total = 0;
     let totalAll = 0;
     prods.forEach(p => {

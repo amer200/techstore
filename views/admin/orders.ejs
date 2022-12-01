@@ -22,32 +22,74 @@
                 <ul class="list-group categs">
                     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio1">المنتهية</label>
+                        <label class="btn btn-outline-primary" for="btnradio1"
+                            onclick="ordersByStatus('done')">المنتهية</label>
 
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio2">في الشحن</label>
+                        <label class="btn btn-outline-primary" for="btnradio2" onclick="ordersByStatus('shpping')">في
+                            الشحن</label>
 
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio3">تحت الطلب</label>
+                        <label class="btn btn-outline-primary" for="btnradio3"
+                            onclick="ordersByStatus('new')">جديد</label>
                     </div>
                     <% orders.forEach(o=>{%>
-                        <li class="list-group-item o-<%=o.status%>">
+                        <li class="list-group-item orders o-<%=o.status%>">
                             <span class="user">
-                                <%=o.user.name%>
+                                اسم المستحدم: <%=o.user.name%>
+                                    /
+                                    اجمالي الطلب: <%= o.total%>
                             </span>
-                            <ul class="list-group">
-                                <%o.prods.forEach(p=>{%>
-                                    <li class="list-group-item">
-                                        <span class="prod-name">
-                                            <%=p.name%>
-                                        </span>
-                                        <span class="prod-price">
-                                            <%=p.price%>
-                                        </span>
-                                    </li>
-                                    <%})%>
-                            </ul>
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#id<%=o._id%>">عرض</button>
+                            <button class="btn btn-dark" onclick="ChangeOrderStat('shpping', '<%=o._id%>')">شحن</button>
+                            <button class="btn btn-success" onclick="ChangeOrderStat('done', '<%=o._id%>')">تم
+                                بالكامل</button>
+                            <button class="btn btn-danger">حذف</button>
                         </li>
+                        <div class="modal fade" id="id<%=o._id%>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <ul class="list-group">
+                                            <h3>بينات المنتجات</h3>
+                                            <% o.prods.forEach(p=>{%>
+                                                <li class="list-group-item">
+                                                    اسم المنتج: <%=p.name%>
+                                                        /
+                                                        الكمية: <%=p.cardQ%>
+                                                </li>
+                                                <%}) %>
+                                                    <hr>
+                                                    <h3>بينات المستخدم</h3>
+                                                    <li class="list-group">
+                                                        اسم المستخدم : <%=o.user.name%>
+                                                            اسم المستخدم بالكامل: <%=o.user.surname%>
+                                                                /
+                                                                الدولة: <%=o.user.country%>
+                                                                    /
+                                                                    المدينة: <%=o.user.city%>
+                                                                        /
+                                                                        العنوان: <%=o.user.address%>
+                                                                            /
+                                                                            الهاتف: <%= o.user.phone%>
+
+                                                    </li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <%})%>
                 </ul>
             </div>

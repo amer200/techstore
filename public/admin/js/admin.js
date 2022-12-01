@@ -38,3 +38,24 @@ const removeProdImg = (pId, img, t) => {
       })
   }
 }
+const ordersByStatus = (stat) => {
+  console.log(stat)
+  const ordersByStat = Array.from(document.getElementsByClassName(`o-${stat}`));
+  const allOrders = Array.from(document.getElementsByClassName('orders'));
+  allOrders.forEach(o => {
+    o.classList.add('d-none')
+  })
+  ordersByStat.forEach(o => {
+    o.classList.remove('d-none')
+  })
+  console.log(ordersByStat)
+}
+const ChangeOrderStat = (stat, id) => {
+  fetch(`/admin/change-order-stat/${stat}/${id}`)
+    .then(res => {
+      location.reload()
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
