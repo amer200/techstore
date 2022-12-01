@@ -4,6 +4,7 @@ const User = require('../models/user');
 const Order = require('../models/order');
 const Msg = require('../models/msg');
 const bcrypt = require('bcrypt');
+const { off } = require('../models/categ');
 const saltRounds = 10;
 exports.getMainPage = async (req, res) => {
     const categs = await Categ.find();
@@ -23,7 +24,6 @@ exports.getCategPage = async (req, res) => {
     const id = req.params.id;
     const categs = await Categ.find();
     const categ = await Categ.findById(id).populate('prods');
-    console.log(categ);
     res.render('main/categ', {
         categs: categs,
         categ: categ
@@ -122,45 +122,12 @@ exports.postLogin = async (req, res) => {
             console.log(err)
         })
 }
-exports.addToCard = (req, res) => {
-    const prodId = req.params.id;
-    const userId = req.session.user._id;
-    User.findById(userId)
-        .then(u => {
-            let test = false;
-            u.card.forEach(c => {
-                if (c.toString() == prodId) {
-                    req.session.card.forEach(sc => {
-                        if (sc._id.toString() == prodId) {
-                            return sc.cardQ++, test = true
-                        }
-                    })
-                }
-            });
-            if (test) {
-                console.log(test)
-                return res.send({
-                    msg: 'ok'
-                })
-            } else {
-                Prod.findById(prodId)
-                    .then(p => {
-                        p.cardQ = 1;
-                        req.session.card.push(p)
-                    })
-                u.card.push(prodId);
-                return u.save()
-            }
-        })
-        .then(u => {
-            res.send({
-                msg: 'ok'
-            })
-        })
-        .catch(err => {
-            console.log(err)
-        })
+exports.card = (req, res) => {
+    res.status(200).send({
+        msg: 'ok'
+    })
 }
+
 exports.getInfo = async (req, res) => {
     const categs = await Categ.find();
     res.render('main/info', {
@@ -204,9 +171,25 @@ exports.postContactUS = (req, res) => {
 exports.getShopBag = async (req, res) => {
     const categs = await Categ.find();
     let prods = req.session.card;
+    let prodsIds;
+    // const products = await Prod.find({ "_id": { "$in": prodsIds } })
+    let total = 0;
+    let totalAll = 0;
+    prods.forEach(p => {
+        if (p.offer > 0) {
+            let offer = (p.price * p.offer) / 100;
+            let priceAfterOffer = p.price - offer;
+            total = total + (priceAfterOffer * p.cardQ);
+        } else {
+            total = total + (p.price * p.cardQ);
+        }
+    })
+    totalAll = ((20 * total) / 100) + total;
     res.render('main/shop-bag', {
         categs: categs,
-        prods: prods
+        prods: prods,
+        total: total,
+        totalAll: totalAll
     })
 }
 /***********************************************************************/
