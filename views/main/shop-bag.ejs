@@ -39,13 +39,15 @@
                                                         </strong>
                                                     </td>
                                                     <td>
-                                                        <form class="form-inline">
-                                                            <input class="form-control" type="text" value="1" readonly>
-                                                            <button rel="tooltip" class="btn btn-default"><i
+                                                        <div class="form-inline">
+                                                            <input class="form-control" type="text" value="<%=p.cardQ%>"
+                                                                readonly>
+                                                            <button rel="tooltip" class="btn btn-default" onclick="plusCard('<%=p._id%>')"><i
                                                                     class="fa-solid fa-plus"></i></button>
-                                                            <button rel="tooltip" class="btn btn-default"><i
+                                                            <button rel="tooltip" class="btn btn-default"
+                                                                onclick="minCard('<%=p._id%>')"><i
                                                                     class="fa-solid fa-minus"></i></button>
-                                                        </form>
+                                                        </div>
                                                     </td>
                                                     <td>$<%=p.price%>
                                                     </td>
@@ -62,25 +64,28 @@
                                                         <td colspan="6">&nbsp;</td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="4" class="text-right">المجوع الكلي</td>
-                                                        <td>$86.00</td>
+                                                        <td colspan="4" class="text-right">المجوع</td>
+                                                        <td>$<%= total%>
+                                                        </td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="4" class="text-right">Total Shipping</td>
-                                                        <td>$2.00</td>
+                                                        <td colspan="4" class="text-right">ضريبة القيمة المضافة</td>
+                                                        <td>20%</td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="4" class="text-right"><strong>Total</strong></td>
-                                                        <td>$88.00</td>
+                                                        <td colspan="4" class="text-right"><strong>المجوع الكلي</strong>
+                                                        </td>
+                                                        <td>$<%=totalAll%>
+                                                        </td>
                                                     </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-success"><span
-                                class="glyphicon glyphicon-arrow-left"></span>&nbsp;Continue Shopping</a>
-                        <a href="#" class="btn btn-primary pull-right">Next<span
+                        <a href="/" class="btn btn-success"><span
+                                class="glyphicon glyphicon-arrow-left"></span>&nbsp;تسوق المزيد</a>
+                        <a href="#" class="btn btn-primary pull-right">اتمام الطلب<span
                                 class="glyphicon glyphicon-chevron-right"></span></a>
                     </div>
                 </div>

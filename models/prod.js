@@ -5,9 +5,15 @@ const prodSchema = mongoose.Schema({
     price: Number,
     quant: Number,
     desc: String,
-    offer: Number,
+    offer: {
+        type: Number,
+        default: 0
+    },
     imgs: [String],
-    cardQ: Number,
+    cardQ: {
+        type: Number,
+        default: 1
+    },
     categ: { type: mongoose.Schema.Types.ObjectId, ref: 'Categ' }
 })
 
