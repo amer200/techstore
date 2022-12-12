@@ -4,7 +4,6 @@ const User = require('../models/user');
 const Order = require('../models/order');
 const Msg = require('../models/msg');
 const bcrypt = require('bcrypt');
-const { off } = require('../models/categ');
 const saltRounds = 10;
 exports.getMainPage = async (req, res) => {
     const categs = await Categ.find();
@@ -171,7 +170,6 @@ exports.postContactUS = (req, res) => {
 exports.getShopBag = async (req, res) => {
     const categs = await Categ.find();
     let prods = req.session.card;
-    let prodsIds;
     let total = 0;
     let totalAll = 0;
     prods.forEach(p => {
