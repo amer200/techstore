@@ -199,3 +199,12 @@ function genRandonString(length) {
     }
     return result + Date.now();
 }
+exports.Search = async (req, res) => {
+    let payload = req.body.payload.trim();
+    let search = await Prod.find({ name: { $regex: new RegExp(payload + '.*', 'i') } });
+    search = search.slice(0, 10);
+    console.log(search)
+    res.send({
+        payload: search
+    })
+}

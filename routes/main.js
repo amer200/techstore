@@ -20,6 +20,7 @@ route.get('/cond', authController.addUserLocal, mainController.getCond);
 route.get('/contact', authController.addUserLocal, mainController.getCntactUs);
 route.post('/contact', mainController.postContactUS);
 route.get('/card', authController.addUserLocal, mainController.getShopBag);
+route.post('/get-search-result', authController.addUserLocal, mainController.Search);
 /* order */
 route.get('/addOrder', authController.isUserAllow, authController.addUserLocal, orderController.submitOrder);
 module.exports = route;

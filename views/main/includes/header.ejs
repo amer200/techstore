@@ -11,10 +11,12 @@
                     <div class="collapse navbar-collapse" id="navbarToggleremo01">
                         <img class="class" src="/main/img/logo.jpg" alt="">
                         <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="اكتب اسم المنتج"
-                                aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit"><img src="/main/img/search.svg"
-                                    alt=""></button>
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                                onkeyup="sendSerch(this)">
+                            <button class="btn btn-outline-success" type="submit" style="color: #fff;">Search</button>
+                            <ul class="list-group" id="searchResult">
+
+                            </ul>
                         </form>
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
@@ -92,3 +94,34 @@
                     </nav>
                 </div>
             </div>
+            <script>
+                const resultBox = document.getElementById('searchResult');
+                const createSearchResult = (id, title) => {
+                    const myLi = document.createElement('li');
+                    myLi.classList.add('list-group-item');
+                    const content = `<a href="/prod/${id}">${title}</a>`
+                    myLi.innerHTML = content
+                    resultBox.appendChild(myLi)
+                }
+                const sendSerch = (e) => {
+                    if (e.value !== '') {
+                        fetch('/get-search-result', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ payload: e.value })
+                        }).then(res => {
+                            return res.json()
+                        }).then(data => {
+                            let payload = data.payload;
+                            resultBox.innerHTML = ' ';
+                            payload.forEach(p => {
+                                createSearchResult(p._id, p.name);
+                            });
+                        }).catch(err => {
+                            console.log(err)
+                        })
+                    } else {
+                        resultBox.innerHTML = ' ';
+                    }
+                }
+            </script>
