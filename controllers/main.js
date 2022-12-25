@@ -200,7 +200,7 @@ function genRandonString(length) {
 }
 exports.Search = async (req, res) => {
     let payload = req.body.payload.trim();
-    let search = await Prod.find({ name: { $regex: new RegExp(payload + '.*', 'i') } });
+    let search = await Prod.find({ name: { $regex: new RegExp(payload + '.*', 'i') } }).limit(10);
     search = search.slice(0, 10);
     console.log(search)
     res.send({

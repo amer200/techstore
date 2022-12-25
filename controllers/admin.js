@@ -2,6 +2,7 @@ const Categ = require('../models/categ');
 const Prod = require('../models/prod');
 const Order = require('../models/order');
 const User = require('../models/user');
+const Msg = require('../models/msg');
 const fs = require('fs');
 exports.getMainPage = async (req, res) => {
     try {
@@ -228,6 +229,18 @@ exports.getUsers = (req, res) => {
         .then(u => {
             res.render('admin/users', {
                 users: u
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+/**msgs */
+exports.getMsgs = (req, res) => {
+    Msg.find()
+        .then(ms => {
+            res.render('admin/msg', {
+                ms: ms
             })
         })
         .catch(err => {

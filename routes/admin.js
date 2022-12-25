@@ -20,4 +20,6 @@ route.get('/orders', adminControllers.getOrders)
 route.get('/change-order-stat/:stat/:id', adminControllers.changeOrderStat);
 /**users */
 route.get('/users', adminControllers.getUsers);
+/* msgs*/
+route.get('/msgs', adminControllers.getMsgs);
 module.exports = route;

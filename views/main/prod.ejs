@@ -50,7 +50,19 @@
                         </p>
                     </div>
                     <div class="qunt">
-                        <button class="btn btn-primary" onclick="addTocard('<%=p._id%>')">اضف الى العربة</button>
+                        <% if(locals){ %>
+                            <% if(locals.user){ %>
+                                <button class="btn btn-primary" onclick="addTocard('<%=p._id%>')">اضف الى
+                                    العربة</button>
+                                <% }else{ %>
+                                    <a href="/login" class="btn btn-primary">اضف الى
+                                        العربة</a>
+                                    <% } %> %>
+                                        <%}else{ %>
+                                            <a href="/login" class="btn btn-primary">اضف الى
+                                                العربة</a>
+                                            <% } %>
+
                     </div>
                 </div>
             </div>

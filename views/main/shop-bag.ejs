@@ -1,0 +1,50 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+        <div class="container">
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">المنتج</th>
+                            <th scope="col">الكمية</th>
+                            <th scope="col">السعر</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%let i=1%>
+                            <% prods.forEach(p=>{ %>
+                                <tr>
+                                    <th scope="row">
+                                        <%=i++%>
+                                    </th>
+                                    <td>
+                                        <%=p.name%>
+                                    </td>
+                                    <td>
+                                        <%=locals.cardQ%>
+                                    </td>
+                                    <td>
+                                        <%if (p.offer) {%>
+                                            <%=Math.floor(p.price - ((p.offer*p.price) / 100))%>
+                                                <%}else{%>
+                                                    <%=p.price%>
+                                                        <%}%>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <ul class="list-group" style="margin-bottom: 20px;">
+                    <li class="list-group-item">المجوع = <%=Math.floor(total)%>
+                    </li>
+                    <li class="list-group-item">المجوع بالقيمة المضافة(20%) = <%= Math.floor(totalAll)%>
+                    </li>
+                    <li class="list-group-item"><a href="/addOrder" class="btn btn-primary">اتمام الطلب</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <%- include('includes/footer') %>
