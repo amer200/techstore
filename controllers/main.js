@@ -8,12 +8,12 @@ const saltRounds = 10;
 exports.getMainPage = async (req, res) => {
     const categs = await Categ.find();
     const randProds = await Prod.aggregate([{ $sample: { size: 3 } }]).limit(5);
-    const newProds = await Prod.find().sort({ _id: -1 }).limit(5);
-    const offer = await Prod.find().sort({ "offer": -1 }).limit(1);
+    const newProds = await Prod.find().sort({ _id: -1 }).limit(4);
+    const offer = await Prod.find().sort({ "offer": -1 }).limit(4);
     const orders = await Order.find();
     res.render('main/home', {
         categs: categs,
-        randProds: randProds,
+        randProd: randProds,
         newProds: newProds,
         offer: offer,
         orders: orders.length
@@ -46,7 +46,7 @@ exports.getSignUp = async (req, res) => {
 exports.postSignUp = async (req, res) => {
     const name = req.body.name;
     const surname = req.body.surname;
-    const password = req.body.password[0];
+    const password = req.body.password;
     const email = req.body.email;
     const city = req.body.city;
     const zip = req.body.zip;
@@ -96,7 +96,6 @@ exports.postLogin = async (req, res) => {
     const categs = await Categ.find();
     const email = req.body.email;
     const password = req.body.password;
-    console.log(req.body)
     User.findOne({ email: email })
         .then(u => {
             if (!u) {

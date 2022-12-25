@@ -1,93 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/main/css/bootstrap.rtl.min.css">
-  <link rel="stylesheet" href="/main/css/style.css">
-  <link rel="stylesheet" href="/main/css/media.css">
-</head>
-<%-include('includes/header')%>
-  <div class="button-in-t-shirt-page">
-    <!-- ///////////////////////////////////////////////// -->
-    <div class="butoon-t-shirt">
-      <button class="pink-button t-shirt-button">الافتراضي</button>
-      <button class="t-shirt-button">أبجديا</button>
-      <button class="t-shirt-button">الأكثر مبيعاً</button>
-      <button class="t-shirt-button">الأرخص</button>
-      <button class="t-shirt-button">الأغلى</button>
-    </div>
-    <!-- ///////////////////////////////////////////////// -->
-    <div class="t-shirt-two">
-      <%categ.prods.forEach(p=>{%>
-        <div class="t-shirt-star1">
-          <div><a href="/prod/<%=p._id%>"><img src="<%=p.imgs[0]%>" class="T-shirt2"></a></div>
-
-          <!-- /// -->
-          <div class="text-star">
-            <!-- <p class="text-t-shirt-stars">
-              
-            </p> -->
-            <!-- <div class="stars">
-              <img src="img/icons8-star-64.png" alt="" class="star-width">
-              <img src="img/icons8-star-64.png" alt="" class="star-width">
-              <img src="img/icons8-star-64.png" alt="" class="star-width">
-              <img src="img/icons8-star-64.png" alt="" class="star-width">
-            </div> -->
-          </div>
-          <!-- /// -->
-          <div class="display-t-shirt">
-            <div class="text-t-shirt-star1">
-              <%=p.name%>
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+        <div class="new-prods categ container-fluid">
+            <div class="row">
+                <h5>
+                    <%=categ.name%>
+                </h5>
             </div>
-            <div class="text-t-shirt-star2">
-              <%=p.price%> $
+            <div class="row">
+                <% categ.prods.forEach(p=>{ %>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card">
+                            <img src="<%=p.imgs[0]%>" class="card-img-top" alt="produdct">
+                            <div class="card-body">
+                                <p class="card-text p-name">
+                                    <%=p.name%>
+                                </p>
+                                <% if(p.offer){ %>
+                                    <p class="card-text p-offer">
+                                        <%=p.price%> $
+                                    </p>
+                                    <p class="card-text p-price">
+                                        <%=Math.floor(p.price - ((p.offer*p.price) / 100))%> $
+                                    </p>
+                                    <%}else{ %>
+                                        <p class="card-text p-price">
+                                            <%=p.price%> $
+                                        </p>
+                                        <%} %>
+                                            <a href="/prod/<%=p._id%>" class="btn btn-primary">عرض المنتج</a>
+                            </div>
+                        </div>
+                    </div>
+                    <%})%>
             </div>
-          </div>
-          <!-- ////////// -->
-          <div>
-            <button class="bay">شراء</button>
-          </div>
         </div>
-        <%})%>
-    </div>
-    <div class="logos-text t-shirt">
-
-
-      <!-- /////////////// -->
-      <div class="photo-text">
-        <img class="div-photo" src="img/SVG/20210420_1618874819-762-removebg-preview.png" class="logo-remov1">
-        <p class="text-logo-remov">كسبنا جائزة "متجر العام" المرموقة</p>
-      </div>
-      <!-- //////////////// -->
-      <!-- /////////////// -->
-      <div class="photo-text">
-        <img class="div-phot" src="img/svg/download__3_-removebg-preview (1).png" class="logo-remov">
-        <p class="text-logo-remov">نحاول مساعدة المحتاجين</p>
-      </div>
-      <!-- //////////////// -->
-      <!-- /////////////// -->
-      <div class="photo-text">
-        <img class="div-phoo" src="img/SVG/logo-removebg-preview.png" class="logo-remov1">
-        <p class="text-logo-remov">حاصلة على شهادة ايزو الدولية QMS </p>
-      </div>
-      <!-- //////////////// -->
-      <!-- /////////////// -->
-      <div class="photo-text">
-        <img src="img/SVG/download__1_-removebg-preview.png" class="logo-remov">
-        <p class="text-logo-remov">تشترون من خلال برنامجنا الالكتروني بامان</p>
-      </div>
-      <!-- //////////////// -->
-
-
-    </div>
-
-
-
-  </div>
-
-
-  <!-- </div> -->
-  <%- include('includes/footer') %>
+        <%- include('includes/footer') %>

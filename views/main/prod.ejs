@@ -1,71 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/main/css/bootstrap.rtl.min.css">
-  <link rel="stylesheet" href="/main/css/style.css">
-  <link rel="stylesheet" href="/main/css/media.css">
-</head>
-<%- include('includes/header') %>
-  <!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
-
-  <div class="prod container-fluid">
-    <div class="row">
-      <div class="col-12 col-md-6">
-        <div class="row slide">
-          <div class="indecator col-3">
-            <ul class="list-group">
-              <%p.imgs.forEach(i=>{ %>
-                <li class="list-group-item"><img src="<%=i%>" onclick="changeImg(this)" alt="slidee">
-                </li>
-                <% })%>
-            </ul>
-          </div>
-          <div class="active-slide col-9">
-            <img src="<%=p.imgs[0]%>" alt="active-img" id="slide" />
-          </div>
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+        <link rel="stylesheet" href="/main/css/prod.css">
+        <div class="prod container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="row slide">
+                        <div class="indecator col-3">
+                            <ul class="list-group">
+                                <% p.imgs.forEach(i=>{ %>
+                                    <li class="list-group-item"><img src="<%=i%>" onclick="changeImg(this)"
+                                            alt="slidee">
+                                    </li>
+                                    <%}) %>
+                            </ul>
+                        </div>
+                        <div class="active-slide col-9">
+                            <img src="<%=p.imgs[0]%>" alt="active-img" id="slide" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 details">
+                    <h3>
+                        <%=p.name%>
+                    </h3>
+                    <div class="rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        (15)
+                        <% if(p.offer){%>
+                            <p class="card-text p-offer">
+                                <%=p.price%> $
+                            </p>
+                            <p class="card-text p-price">
+                                <%=Math.floor(p.price - ((p.offer*p.price) / 100))%> $
+                            </p>
+                            <%}else{%>
+                                <span class="price">
+                                    <%=p.price%> $
+                                </span>
+                                <%} %>
+                    </div>
+                    <div class="desc">
+                        <h5>الوصف</h5>
+                        <p class="lead">
+                            <%= p.desc %>
+                        </p>
+                    </div>
+                    <div class="qunt">
+                        <button class="btn btn-primary" onclick="addTocard('<%=p._id%>')">اضف الى العربة</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <script>
-        const slide = document.getElementById('slide');
-        const changeImg = (e) => {
-          slide.src = e.src
-        }
-      </script>
-      <div class="col-12 col-md-6 details">
-        <h3>
-          <%=p.name%>
-        </h3>
-        <div class="rate">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <span class="price">
-            <%= p.price%> $
-          </span>
-          <span class="offer">
-            <%= p.offer%> $
-          </span>
-        </div>
-        <div class="desc">
-          <h5>الوصف</h5>
-          <p class="lead">
-            <%= p.desc%>
-          </p>
-        </div>
-        <div class="qunt">
-          <button class="btn btn-primary" onclick="addCard('<%=p._id%>')">اضف الى العربة</button>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- </div> -->
-  <script src="/main/js/main.js"></script>
-  <%- include('includes/footer') %>
+        <script src="/main/js/prod.js"></script>
+        <%- include('includes/footer') %>

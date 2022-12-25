@@ -1,165 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/main/css/bootstrap.rtl.min.css">
-  <link rel="stylesheet" href="/main/css/style.css">
-  <link rel="stylesheet" href="/main/css/media.css">
-</head>
-<%- include('includes/header') %>
-  <!-- /////////////////// -->
-  <h1>
-    <p class="register">register</p>
-  </h1>
-  <!-- <div>
-    <div class="login-face-book"
-      style="background-color: #45619d; align-items:center center; padding: 10px; display: flex;     justify-content: center; width: 50%; margin: auto;">
-      <h2 style="color:#fff; font-weight: 300; margin-left: 10px; text-align: center;">Login With FaceBook</h2>
-      <img src="img/facebook.png" style="width:30px; height: 30px;" alt="">
-    </div>
-  </div> -->
-
-  <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-  <form class="forms-inputs" id="signupForm" action="/signup" method="post">
-    <div class="login">
-      <h2 style="color: #c82f88;">Login data</h2>
-    </div>
-    <div class="form-group row mb-2">
-      <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail <span style="color: #c82f88;">*</span></label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3" name="email">
-      </div>
-    </div>
-    <div class="form-group row mb-2">
-      <label for="inputPassword3" class="col-sm-2 col-form-label">Password <span
-          style="color: #c82f88;">*</span></label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword3" name="password">
-      </div>
-    </div>
-
-    <div class="form-group row mb-2">
-      <label for="inputPassword3" class="col-sm-2 col-form-label">Passwordagain<span
-          style="color: #c82f88;">*</span></label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword3" name="password">
-      </div>
-    </div>
-
-    <!-- //////////////////////////////////////// -->
-
-    <!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
-
-    <div class="login">
-      <h2 style="color: #c82f88;">Invoice data</h2>
-    </div>
-    <div class="form-group row">
-      <label for="inputEmail3" class="col-sm-2 col-form-label">Name <span style="color: #c82f88;">*</span></label>
-      <div class="col-sm-10 mb-2">
-        <input type="text" class="form-control" id="inputEmail3" name="name">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputEmail3" class="col-sm-2 col-form-label">Surname <span style="color: #c82f88;">*</span></label>
-      <div class="col-sm-10 mb-2">
-        <input type="text" class="form-control" id="inputEmail3" name="surname">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputEmail3" class="col-sm-2 col-form-label">Address <span style="color: #c82f88;">*</span></label>
-      <div class="col-sm-10 mb-2">
-        <input type="text" class="form-control" id="inputEmail3" name="address">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputEmail3" class="col-sm-2 col-form-label">City <span style="color: #c82f88;">*</span></label>
-      <div class="col-sm-10 mb-2">
-        <input type="text" class="form-control" id="inputEmail3" name="city">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputEmail3" class="col-sm-2 col-form-label">Zip Code <span style="color: #c82f88;">*</span></label>
-      <div class="col-sm-10 mb-2">
-        <input type="text" class="form-control" id="inputEmail3" name="zip">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputPassword3" class="col-sm-2 col-form-label">Country <span style="color: #c82f88;">*</span></label>
-      <div class="col-sm-10 mb-2">
-        <input type="text" class="form-control" id="inputPassword3" name="country">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputPassword3" class="col-sm-2 col-form-label">Phone <span style="color: #c82f88;">*</span></label>
-      <div class="col-sm-10 mb-2">
-        <input type="tel" class="form-control" id="inputPassword3" name="phone">
-      </div>
-    </div>
-
-
-
-  </form>
-  <!-- ////////////////////////////////// -->
-  </div>
-  <div class="form-group group-check  ">
-
-
-    <div class="form-check  group-check" style="width: 80%; margin:auto">
-      <label class="form-check-label" for="invalidCheck">
-        I accept terms and conditions
-      </label>
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required class="  group-check">
-
-      <div class="invalid-feedback">
-        You must agree before submitting.
-      </div>
-      <br>
-      <button class="btn btn-primary  mt-2" type="button" onclick="signupReq()">Register</button>
-    </div>
-  </div>
-
-  </div>
-
-  <!-- ///////////////////////////////////////////////////////////////// -->
-  <div class="logos-text t-shirt">
-
-
-    <!-- /////////////// -->
-    <div class="photo-text">
-      <img class="div-photo" src="img/SVG/20210420_1618874819-762-removebg-preview.png" class="logo-remov1">
-      <p class="text-logo-remov">كسبنا جائزة "متجر العام" المرموقة</p>
-    </div>
-    <!-- //////////////// -->
-    <!-- /////////////// -->
-    <div class="photo-text">
-      <img class="div-phot" src="img/svg/download__3_-removebg-preview (1).png" class="logo-remov">
-      <p class="text-logo-remov">نحاول مساعدة المحتاجين</p>
-    </div>
-    <!-- //////////////// -->
-    <!-- /////////////// -->
-    <div class="photo-text">
-      <img class="div-phoo" src="img/SVG/logo-removebg-preview.png" class="logo-remov1">
-      <p class="text-logo-remov">حاصلة على شهادة ايزو الدولية QMS </p>
-    </div>
-    <!-- //////////////// -->
-    <!-- /////////////// -->
-    <div class="photo-text">
-      <img src="img/SVG/download__1_-removebg-preview.png" class="logo-remov">
-      <p class="text-logo-remov">تشترون من خلال برنامجنا الالكتروني بامان</p>
-    </div>
-    <!-- //////////////// -->
-
-
-  </div>
-
-
-
-  </div>
-
-
-  <!-- </div> -->
-  <script src="/main/js/signup.js"></script>
-  <%- include('includes/footer') %>
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+        <div class="container">
+            <div class="row">
+                <h2>تسجيل حساب جديد</h2>
+            </div>
+            <div class="row">
+                <form action="/signup" method="post">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">الاسم</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">اسم العائلة</label>
+                        <input type="text" name="surname" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">الايميل</label>
+                        <input type="text" name="email" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">المدينة</label>
+                        <input type="text" name="city" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">الرمز البريدي</label>
+                        <input type="text" name="zip" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">الدولة</label>
+                        <input type="text" name="country" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">العنوان</label>
+                        <input type="text" name="address" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">الهاتف</label>
+                        <input type="text" name="phone" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">كلمة المرور</label>
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <%- include('includes/footer') %>
