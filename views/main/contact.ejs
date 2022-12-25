@@ -1,0 +1,29 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+        <div class="container">
+            <div class="row">
+                <h3>راسلنا</h3>
+            </div>
+            <div class="row">
+                <form action="/contact" method="post">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">الاسم</label>
+                        <input type="text" class="form-control" name="name" id="exampleInputEmail1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">البريد الاكتروني</label>
+                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">العنوان</label>
+                        <input type="text" class="form-control" name="subject" id="exampleInputEmail1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">الرسالة</label>
+                        <textarea class="form-control" name="msg" id="exampleInputEmail1" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <%- include('includes/footer') %>

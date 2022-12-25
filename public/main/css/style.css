@@ -8,13 +8,26 @@
 }
 
 /* nav */
-/* nav .form-control{
-    width: 55%;
-    display: inline;
+nav img {
+    max-width: 115px;
 }
-nav .form-inline{
-    margin-right: 45%;
-} */
+
+#searchResult {
+    position: absolute;
+    top: 57px;
+    z-index: 999999999999999;
+}
+
+#searchResult a {
+    text-decoration: none;
+    color: #333;
+}
+
+#searchResult a:hover {
+    color: #888;
+    font-size: 1.5rem;
+}
+
 /* end nav*/
 /* carousel */
 .carousel {
@@ -194,9 +207,10 @@ nav .form-inline{
 
 /*end testo */
 /* start prod*/
-#myCarousel{
+#myCarousel {
     width: 100%;
 }
+
 #myCarousel img {
     height: 50%;
     width: auto;

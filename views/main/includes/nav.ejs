@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="/"><img src="/main/img/logo.jpeg" alt="" srcset=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -48,9 +48,44 @@
                         <%}%>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                    onkeyup="sendSerch(this)">
                 <button class="btn btn-outline-success" type="submit">Search</button>
+                <ul class="list-group" id="searchResult">
+
+                </ul>
             </form>
         </div>
     </div>
 </nav>
+<script>
+    const resultBox = document.getElementById('searchResult');
+    const createSearchResult = (id, title) => {
+        const myLi = document.createElement('li');
+        myLi.classList.add('list-group-item');
+        const content = `<a href="/prod/${id}">${title}</a>`
+        myLi.innerHTML = content
+        resultBox.appendChild(myLi)
+    }
+    const sendSerch = (e) => {
+        if (e.value !== '') {
+            fetch('/get-search-result', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ payload: e.value })
+            }).then(res => {
+                return res.json()
+            }).then(data => {
+                let payload = data.payload;
+                resultBox.innerHTML = ' ';
+                payload.forEach(p => {
+                    createSearchResult(p._id, p.name);
+                });
+            }).catch(err => {
+                console.log(err)
+            })
+        } else {
+            resultBox.innerHTML = ' ';
+        }
+    }
+</script>

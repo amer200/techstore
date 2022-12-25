@@ -17,3 +17,14 @@ exports.isUserAllow = (req, res, next) => {
         res.status(304).redirect('/login')
     }
 }
+exports.isAdmin = (req, res, next) => {
+    if (req.session.user) {
+        if (req.session.user.rolle == 'admin') {
+            next()
+        } else {
+            res.redirect('/login')
+        }
+    } else {
+        res.redirect('/login')
+    }
+}
