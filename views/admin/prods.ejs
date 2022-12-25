@@ -125,14 +125,16 @@
                                                         <label class="form-label">القسم </label>
                                                         <select class="form-control" name="categ"
                                                             id="inputGroupSelect02" required>
-                                                            <option value="<%=p.categ._id%>" selected>
-                                                                <%=p.categ.name%>
-                                                            </option>
-                                                            <%c.forEach(c=>{%>
-                                                                <option value="<%=c._id%>">
-                                                                    <%=c.name%>
+                                                            <% if(p.categ){%>
+                                                                <option value="<%=p.categ._id%>" selected>
+                                                                    <%=p.categ.name%>
                                                                 </option>
-                                                                <%})%>
+                                                                <%} %>
+                                                                    <%c.forEach(c=>{%>
+                                                                        <option value="<%=c._id%>">
+                                                                            <%=c.name%>
+                                                                        </option>
+                                                                        <%})%>
                                                         </select>
                                                     </div>
                                                     <div class="mb-3">
